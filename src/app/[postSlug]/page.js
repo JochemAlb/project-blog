@@ -14,6 +14,9 @@ import dynamic from 'next/dynamic';
 const DivisionGroupsDemo = dynamic(() =>
   import('@/components/DivisionGroupsDemo')
 );
+const CircularColorsDemo = dynamic(() =>
+  import('@/components/CircularColorsDemo')
+);
 
 export async function generateMetadata({ params }) {
   const { frontmatter: meta } = await loadBlogPost(params.postSlug);
@@ -35,6 +38,7 @@ async function BlogPost({ params }) {
           components={{
             pre: CodeSnippet,
             DivisionGroupsDemo,
+            CircularColorsDemo,
           }}
         />
       </div>
